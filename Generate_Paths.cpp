@@ -33,8 +33,6 @@ void construct_candidates(CANDIDATES A, int k, int n, MAXCANDIDATES &S, int &nex
 	{
 		next = 0;
 		last = A[k - 1];
-		queue<int> q;
-		vector<bool> used(n);
 		for (auto v : G[last])
 		{
 			if (!in_sol[v])

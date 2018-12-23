@@ -17,7 +17,7 @@ void process_solution(CANDIDATES A, int k)
 {
 	solution_count++;
 }
-void construct_candidates(CANDIDATES A, int k, int n, MAXCANDIDATES &S, int &next, graph const &G, int t)
+void construct_candidates(CANDIDATES A, int k, int n, MAXCANDIDATES &S, int &next, graph const &G)
 {
 	vector<bool> in_sol(A.size()); 
 	int last; 
@@ -26,7 +26,7 @@ void construct_candidates(CANDIDATES A, int k, int n, MAXCANDIDATES &S, int &nex
 	for (int i = 0; i < k; i++) in_sol[ A[i] ] = true;
 	if(k == 0) 
 	{ 
-		S[0] = 0;
+		S[0] = 0; //Начальная вершина, можно приравнять к другому индексу вершины
 		next = 1;
 	}
 	else 
@@ -53,7 +53,7 @@ void backtrack(CANDIDATES A, int k, graph const &G, int t)
 	else
 	{
 		k = k + 1;
-		construct_candidates(A, k, n, S, next, G, t);
+		construct_candidates(A, k, n, S, next, G);
 		
 		for (int i = 0; i < next; i++)
 		{

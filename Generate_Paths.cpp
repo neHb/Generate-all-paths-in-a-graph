@@ -82,7 +82,6 @@ int main()
 		{0, 5},
 		{1, 2, 3, 4}
 	};
-	generate_subsets(G, 0);
+	generate_subsets(G, 3);
 	cout << solution_count;
-	cin.ignore(2);
 }
